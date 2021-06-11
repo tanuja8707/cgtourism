@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(57deg ,#050763,#000);">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown" >
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'adminHome' %}">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Packages
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="{% url 'add_package' %}">Add Package</a>
+              <a class="dropdown-item" href="{% url 'viewall_tour' %}">View Package</a>
+        </div>
+      </li>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Enquiry
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+          <a class="dropdown-item" href="">View Enquiries</a>
+
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Places
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+          <a class="dropdown-item" href="#">View All Places</a>
+
+
+
+        </div>
+
+      </li>
+
+       <li class="nav-item">
+        <a class="nav-link" href="{% url 'adminlogin' %}">Logout</a>
+      </li>
+      <li class="nav-item active" style="padding-left: 200px">
+        <a class="nav-link" href="#"> Welcome - {{ request.session.name }} <span class="sr-only">(current)</span></a>
+      </li>
+
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,20 @@
+.heading{
+    font-size: 50px;
+    padding-top: 50px;
+    padding-left: 50px;
+    color: greenyellow;
+}
+.aboutus_content p{
+    width: 700px;
+    color: black;
+    padding: 50px;
+    font-size: 20px;
+}
+.aboutus_content .contact{
+    margin-left: 50px;
+    padding-top: 50px;
+    width: 350px;
+    font-size: 20px;
+    color: darkblue;
+    text-align: center;
+}

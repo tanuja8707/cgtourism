@@ -1,0 +1,53 @@
+{% extends 'starter_css.html' %}
+{% block menu %}
+<style>
+body{background: linear-gradient(57deg ,#050763,#000);}
+</style>
+        {% include 'navbar.html' %}
+                <h2 style="color: white;text-align: center; margin-top: 20px;text-transform: uppercase">Packages</h2>
+                <div style="margin-top: 20px; text-align: center; margin-left: 300px">
+                {% if message %}
+                <div class="row">{{ message }}</div>
+                {% endif %}
+                {% for x in data %}
+                    <div class="card mb-3" style="max-width: 900px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <a href="{% url 'pack_details' %}?pid={{ x.pid }}"> <img src="{{ x.image.url }}" class="card-img" alt="..." height="245" ></a>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body" style="text-align: right">
+                            <h5 class="card-title">{{ x.pname }} <span style="margin-left: 20px;">{{ x.prating }}<i class="fa fa-star" style="margin-left: 8px"></i></span> </h5>
+                                <div class="row" style="text-align: center">
+                                    <div class="col-4" ><i class="fa fa-cutlery" aria-hidden="true" style="margin-right: 8px;color: blue"></i>Meals</div>
+                                    <div class="col-4"><i class="fa fa-car" aria-hidden="true" style="margin-right: 8px;color: blue"></i>Sightseeing</div>
+                                    <div class="col-4"><i class="fa fa-bed" aria-hidden="true" style="margin-right: 8px;color: blue"></i>Hotels</div>
+{#                                    <div class="col-4">o</div>#}
+                                </div>
+                            <p class="card-text" style="height: 100px;text-align: center;">{{ x.pdescription }}</p>
+
+                            <div class="row" style="text-align: center">
+                                <div class="col-6" >
+                                    <a href="{% url 'enquiry' %}" class="btn btn-primary btn-sm">Enquire</a>
+                                </div>
+                                <div class="col-6" >
+                                    <a href="{% url 'book_now' %}?bookid={{ x.pid }}" class="btn btn-primary btn-sm">Book Now</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+
+                </div>
+
+
+        {% include 'extra_content.html' %}
+
+
+
+
+{% endblock %}

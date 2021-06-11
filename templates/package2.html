@@ -1,0 +1,161 @@
+{% extends 'starter_css.html' %}
+{% block menu %}
+<style>
+body{background: linear-gradient(57deg ,#050763,#000);}
+</style>
+        {% include 'navbar.html' %}
+{#                <h3 style="color: white;text-align: center; margin-top: 20px;text-transform: uppercase"></h3>#}
+                <section style="filter: drop-shadow(2px 2px 2px aquamarine); padding-left: 150px;">
+                    <div class="jumbotron" style="width: 1200px;height: 1500px; color: white">
+  <h3 class="display-5" style="color: #050763">{{ data.pid.pname }}</h3>
+  <p class="lead" style="color: #00b894">{{ data.pid.pdescription }}</p>
+  <hr class="my-4">
+  <p>
+       <div class="container" style="height: 500px;">
+              <div class="row">
+                <div class="col-xs-12 ">
+                  <nav>
+                    <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist" >
+                      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Details</a>
+                      <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Itinerary</a>
+                      <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Things To Carry</a>
+{#                      <a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" href="#nav-about" role="tab" aria-controls="nav-about" aria-selected="false">About</a>#}
+                    </div>
+                  </nav>
+                  <div class="tab-content py-1 px-1 px-sm-0" id="nav-tabContent" >
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" style="height: 400px">
+                     <div style="padding: 15px; font-size: 20px;color: black">
+                         Pack your bags to know the history, culture and the wildlife of Chattisgarh, a heavily forested state in Central India locked by the Vindhyachal ranges and by four major states of India around.
+Here is a seven day tribal tour that would enable you to witness the vibrant colours of the indigenous tribes of Chattisgarh which are quite unique and lesser known to the outer world.<br>
+If you wish to join the tour, you are requested to arrive at Raipur anytime. On this tour, you will be exploring the small town of Kanker and Kawardha, the village of Bastar which offer the pulsating views of the main tribes and their day to day life scenes.
+Also, have the beautiful glimpses of the Chitrakote Falls, often called the Niagra of India located deep in the heart of Bastar forest, plunges down from a height of 100 feet.<br>
+Discover the major natural spectacle of the state apart from the tribal sights. Spend ample time to capture the beauty of the nature enhanced by the waterfalls and springs, the wide plethora of wildlife, the caves and the rock formations.
+Note one fact that this state has 10 wildlife sanctuaries and 3 national parks within its bounds. The Indrawati National Park, Kanger Ghati National Park and Achanakmar Sanctuary are the principal spots to be visited during any kind of tour of Chattisgarh.
+                    </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <div style="padding: 15px; font-size: 20px;color: black">
+{#                        <p style="padding: 15px; font-size: 20px">#}
+                        <ol>
+                            <li>
+                                Day 1 - Raipur-Jagdalpur<br>
+                                Upon your arrival in Raipur, the representative of the tour provider will meet you and then get transferred to the hotel.
+                                <br>Freshen up and leave for Jagdalpur.<br>
+                                En route, enjoy a picnic lunch at one restaurant.<br>
+                                Jagdalpur is a unique beauty which has numerous tribal villages and mind blowing wildlife of Chattisgarh.<br>
+                                Check in to the hotel after arrival and relax.<br>
+                            </li>
+                            <li>
+                                Day 2 - Jagdalpur - Kanger Valley National Park<br>
+After having breakfast, leave to visit yet another attraction of the state, Kanger Valley National Park.<br>
+
+It is known for its rare wildlife species and the pristine surroundings.<br>
+
+This is considered to be one of the finest and virgin forest areas.<br>
+
+Visit the large deposits of limestone which are present in the form of caves in the park which enhance the beauty of the park.<br>
+
+Enjoy picnic lunch near the Tiratgarh Fall which is a famous tourist attraction.<br>
+
+Return to your hotel afterwards.<br>
+                            </li>
+                            <li>
+                                Day 3 - Chitrakoot Falls - Nagarnar- Jagdalpur<br>
+Post breakfast, head out for a sightseeing tour of the famous attractions of the place.<br>
+
+First and foremost, you will visit the Chitrakoot Falls, famous as the ‘Niagara Falls of India’<br>
+
+After sightseeing, proceed to Jagdalpur back.<br>
+
+                            </li>
+                            <li>
+                                Day 4 - Jagdalpur<br>
+In the morning, post breakfast, leave for ‘haat’ which is the weekly market of Jagdalpur.<br>
+
+Witness the mesmerising local tribal life which the haat showcases.<br>
+
+Post lunch at the hotel, spend the rest of the day at leisure.<br>
+
+You can explore the place or take rest at the hotel.<br>
+                            </li>
+                            <li>
+                                Day 5 - Jagdalpur – Narayanpur – Raipur<br>
+After having your breakfast,start your journey back to Raipur.<br>
+
+En-route, take a side trip to Narayanpur.<br>
+
+Narayanpur has a large collection of some unique handicrafts.<br>
+
+Handicrafts from this place are known as the best in the Bastar region.<br>
+
+It offers many items such as bell metal, wrought iron, woodcraft and bamboo artifacts.<br>
+
+Also, make your way to the Ramakrishna Mission Center which is a major tourist attraction at Narayanpur.<br>
+
+Upon arrival in Raipur, check-in to the hotel and have a comfortable stay at night.<br>
+
+                            </li>
+                            <li>
+                                Day 6 - Raipur<br>
+This is the last day of the tour.<br>
+
+Have your breakfast and then spend the rest of the day at leisure.<br>
+
+Later, take a transfer to the airport and board a flight for your onward journey.<br>
+
+Collapse Itinerary
+                            </li>
+                    </ol>
+
+</div>
+
+
+
+
+
+{#                        </p>#}
+
+
+                    </div>
+                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                        <div  style="padding: 15px; font-size: 20px;color: black; ">
+                            <ul style="width: 1100px">
+                                <li>Comfortable shoes</li>
+                                <li>Comfortable clothes</li>
+                                <li>Sunscreen</li>
+                                <li>Sunglasses</li>
+                                <li>Camera</li>
+                                <li>Sunglasses</li>
+                                <li>Personal medicine kit, if any</li>
+                                <li>Torch light</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+        </div>
+      </div>
+</div>
+
+
+
+  </p>
+                    <div class="row">
+                        <div class="col-6"><a class="btn btn-primary btn-lg" href="#" role="button">Book Now</a></div>
+                        <div class="col-6" style="padding-left: 260px"><span class="alert alert-primary btn-lg">Tour Amount: {{ data.pid.price }}</span></div>
+                    </div>
+
+</div>
+                </section>
+
+
+        {% include 'extra_content.html' %}
+
+
+
+
+{% endblock %}

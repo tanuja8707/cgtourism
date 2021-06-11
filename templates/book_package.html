@@ -1,0 +1,37 @@
+{% extends 'starter_css.html' %}
+{% block menu %}
+<style>
+body{background: linear-gradient(57deg ,#050763,#000);}
+</style>
+        {% include 'navbar.html' %}
+                <h3 style="color: white;text-align: center; margin-top: 20px;text-transform: uppercase">Book Package</h3>
+                <section style="height: 700px;width: 1100px;margin-left: 200px;filter: drop-shadow(2px 2px 2px aquamarine); padding-left: 60px;background-color: #2a6c97">
+{#                {% for x in data %}#}
+                    <div class="row row-cols-1 row-cols-md-2" style="padding-right: 50px;">
+                      <div class="col mb-4">
+                        <div class="card">
+                        <img src="{{ data.image.url }}" class="card-img-top" alt="..." height="400" width="900">
+                        <div class="card-body">
+                        <h5 class="card-title">{{ data.pname }}</h5>
+                        <p class="card-text">{{ data.pdescription }}</p>
+                            <div class="row" style="text-align: center">
+                                <div class="col-6">Total Price: {{ data.price }}</div>
+                                <div class="col-6">
+                                    <a href="#" class="btn btn-primary btn-sm">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+{#                    {% endfor %}#}
+
+                </section>
+
+
+        {% include 'extra_content.html' %}
+
+
+
+
+{% endblock %}

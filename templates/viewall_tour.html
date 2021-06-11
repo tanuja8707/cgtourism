@@ -1,0 +1,63 @@
+{% extends 'starter_css.html' %}
+{% block menu %}
+    {% load static %}
+    <style>
+body{}
+</style>
+<header style="background: linear-gradient(57deg ,#050763,#000);">
+        {% include 'adminMenu.html' %}
+        <main style="display: flex;">
+            <section>
+                <h3 style="margin-bottom: 30px">Tour Packages</h3>
+                <table align="center" border="2" width="900" style="background-color:#9ce5de;color:darkblue">
+
+                <tr style="background-color:darkblue;color:whitesmoke">
+                    <th>ID No</th>
+                    <th>Name</th>
+                    <th>Duration</th>
+                    <th>View</th>
+                    <th>Update</th>
+                    <th>Download</th>
+                    <th>Delete</th>
+                </tr>
+                {% for x in data %}
+                <tr>
+                    <th>{{ x.pid }}</th>
+                    <th>{{ x.pname }}</th>
+                    <th>{{ x.pduration }}</th>
+                    <th>
+                        <a href="{{ x.image.url }}">
+                            <img src="{% static 'images/view.png' %}" height="30" width="30">
+                        </a>
+                    </th>
+                    <th>
+
+                        <a href="{% url 'update_package' %}?pckid={{ x.pid }}">
+                            <img src="{% static 'images/update.png' %}" height="30" width="30">
+                        </a>
+                    </th>
+                    <th>
+                        <a href="{{ x.image.url }}" download="">
+                            <img src="{% static 'images/download1.png' %}" height="25" width="40">
+                        </a>
+                    </th>
+                    <th>
+
+                        <a href="{% url 'delete_package' %}?pckid={{ x.pid }}">
+                            <img src="{% static 'images/delete2.png' %}" height="30" width="30">
+                        </a>
+                    </th>
+
+                </tr>
+                {% endfor %}
+
+            </table>
+            </section>
+        </main>
+        {% include 'extra_content.html' %}
+
+
+
+</header>
+{% endblock %}
+

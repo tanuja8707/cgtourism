@@ -1,0 +1,30 @@
+.login_table {
+    margin: 150px;
+    margin-left: 550px;
+    height: 320px;
+}
+.login_title{
+    font-size: 30px; padding-bottom: 20px;
+    text-align: center;
+    color: whitesmoke;
+
+}
+.login_table tr th a{
+    color: whitesmoke;
+    text-decoration: none;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+.login_table tr th a:hover{
+    color: aquamarine;
+}
+.new_user_content
+{
+    margin-top: 30px;
+    text-align: center;
+
+
+    background-color: whitesmoke;
+
+   //box-shadow: 5px 5px 5px 10px aquamarine;
+}

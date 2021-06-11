@@ -1,0 +1,60 @@
+{% extends 'starter_css.html' %}
+{% load static %}
+
+{% block menu %}
+<header style="background: linear-gradient(57deg ,#050763,#000);">
+        {% include 'adminMenu.html' %}
+        <section class="new_user_content" style="height: 490px;width: 530px;margin-left: 500px;filter: drop-shadow(2px 2px 2px aquamarine); padding-left: 60px;">
+            <h3 style="padding-top: 13px;">Add Tour Package</h3>
+            {% if error %}
+                <h5 style="color: red;"> {{ error }}</h5>
+            {% endif %}
+
+            <form action="{% url 'insert_package' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+            <table align="center" border="0" width="400" style="height: 400px;">
+
+                <tr>
+                    <th>
+                        <input type="text" name="p1" placeholder="Name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <input type="text" name="p2" placeholder="Duration" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <textarea name="p3" placeholder="Description" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required></textarea>
+
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <input type="number" name="p4" placeholder="Price" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <input type="number" name="p5" placeholder="Rating" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        Image: <input type="file" name="p6" required>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <button type="submit" class="btn btn-outline-primary btn-lg btn-block">Add</button>
+
+                    </th>
+
+                </tr>
+
+            </table>
+            </form>
+        </section>
+</header>
+{% endblock %}

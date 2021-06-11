@@ -1,0 +1,112 @@
+{% extends 'starter_css.html' %}
+{% load static %}
+
+{% block menu %}
+<header>
+        {% include 'navbar.html' %}
+        <section class="new_user_content" style="height: 580px;width: 530px;margin-left: 500px;filter: drop-shadow(2px 2px 2px aquamarine); padding-left: 60px;">
+            <h3 style="padding-top: 13px;">Enquiry Form</h3>
+            {% if error %}
+                <h5 style="color: red;"> {{ error }}</h5>
+            {% endif %}
+
+            <form action="{% url 'save_enquiry' %}" method="post">
+                {% csrf_token %}
+            <table align="center" border="0" width="400" style="height: 480px;">
+
+                <tr>
+                    <th>
+                        <input type="text" name="p1" placeholder="Name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required pattern="[a-zA-Z- ]+" title="Enter Valid Name">
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <input type="email" name="p2" placeholder="Email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <input type="tel" name="p3" placeholder="Contact" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" maxlength="10" required pattern="[6789][0-9]{9}" title="Enter Valid Contact Number">
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <input type="date" name="p4" placeholder="Date of Travel" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <input type="number" name="p5" placeholder="Number of People" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <textarea name="p6" placeholder="Message" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required></textarea>
+
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <input type="text" name="t7" id="code" placeholder="Enter Security code shown below" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required onblur="ajaxrequest('code','http://127.0.0.1:8000/checkcode/','code1')">
+                        <div id="code1"> </div>
+                    </th>
+                </tr>
+                <tr>
+                    <th style="font-size: 20px; color: red">
+                    Security Code : <img src="{% static 'captcha/captcha.png' %}">
+                    <a href="">
+                    <img id="img1" src="{% static 'images/refresh.png' %}" width="25" height="25" onclick="ajaxrequest('img1','http://127.0.0.1:8000/refreshcode/','img1')"> </a>
+                    </th>
+                </tr>
+                <tr><th> </th></tr>
+                <tr>
+                    <th>
+                        <button type="submit" class="btn btn-outline-success">Enquiry</button>
+                    </th>
+
+                </tr>
+
+            </table>
+            </form>
+        </section>
+</header>
+
+    <script type="text/javascript">
+
+    function ajaxrequest(input_id,req_url,div_id)
+    {
+    var cn = document.getElementById(input_id).value;
+    var val = 'cname='+cn;
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = check;
+    request.open("POST",req_url,true);
+    request.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+    request.send(val)
+
+    function check()
+    {
+        if(request.readyState == 4)
+        {
+            var val = request.responseText;
+            var json_data = JSON.parse(val); //converting string(text) into json type
+            var sp = document.getElementById(div_id);
+
+            if(json_data.error != undefined)
+            {
+                sp.style.color = "red";
+                sp.innerText = json_data.error;
+                document.getElementById("b1").disabled = true;
+            }
+            else
+            {
+                //sp.style.color = "green";
+                sp.innerText = "";
+                document.getElementById("b1").disabled = false;
+            }
+        }
+    }
+}
+
+    </script>
+
+{% endblock %}

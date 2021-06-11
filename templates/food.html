@@ -1,0 +1,84 @@
+{% extends 'starter_css.html' %}
+{% load static %}
+{% block menu %}
+<header style="background: linear-gradient(57deg,#050763,#000)">
+        {% include 'navbar.html' %}
+
+        <div class="about_food">
+            <div class="food_heading" >
+                Chhattisgarh Food
+            </div>
+            <div class="food_content" style="display: flex">
+                <p>
+                    Though the elements, ingredients, styles of the cuisine of Chhatisgarh and its flavours might be
+                    somewhat lesser known, it is home to some of the most popular items enjoyed all over the country.
+                    Chhattisgarh is known for the richness and colour in its dishes; be it hot, spicy and tangy relishes
+                    or sweet and mouth-watering treasures.<br><br>
+                    The treats in Chattisgarh include a teasing and crunchy Jalebi, a zesty Rakhia Badi and a very
+                    traditional Petha. Maize, wheat and Jowar are the primary and staple ingredients here. Arhar Dal
+                    along with the special Bafauri which is prepared with Chana dals are the most popular delicacies
+                    in the state. Minjhra Bedi, Kusli, Cashew Barfi, Sabudana ki Khichdi, Chech Bhaji, Kohda, Lal bhaji,
+                    Bohar Bhaji are the relishes that almost define the cuisine here. Boree Bassi, Farra, Chausella,
+                    Papchi and Arsa are a few other must-try in Chattisgarh.
+                </p>
+                <div class="food_cardss">
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" id="food_cards">
+                            <div class="food_name">
+                                Muthia <br> Muthia are dumplings cooked in the traditional style of the Chhattisgarh state.
+                            </div>
+                            <img src="{% static 'images/muthia.jpg' %}" class="d-block w-100" alt="..." width="400" height="300">
+                        </div>
+                        <div class="carousel-item">
+                            <div class="food_name">
+                                Bhajia <br> Bhajia is a famous street food of Chhattisgarh which is very popular among the local people of the state.
+                            </div>
+                            <img src="{% static 'images/bhajia.jpg' %}" class="d-block w-100" alt="..." width="400" height="300">
+                        </div>
+                        <div class="carousel-item">
+                            <div class="food_name">
+                                Chila <br> Chila is an important part of the breakfast meal of the people of Chhattisgarh.
+                            </div>
+                            <img src="{% static 'images/chila.jpg' %}" class="d-block w-100" alt="..." width="400" height="300">
+                        </div>
+                        <div class="carousel-item">
+                            <div class="food_name">
+                                Sabudana ki Khichdi <br> It is one of the healthiest and most delicious chhattisgarh is famous fori dishes.
+                            </div>
+                            <img src="{% static 'images/sabudana-khichdi.jpg' %}" class="d-block w-100" alt="..." width="400" height="300">
+                        </div>
+                        <div class="carousel-item">
+                            <div class="food_name">
+                                Bada <br> Bada is basically a light snack which is made from the fermented Urad Dal .
+                            </div>
+                            <img src="{% static 'images/bada.jpg' %}" class="d-block w-100" alt="..." width="400" height="300">
+                        </div>
+                        <div class="carousel-item">
+                            <div class="food_name">
+                                Faraa <br> Faraa are made in the form of dumpling, the main ingredient of dish being rice.
+                            </div>
+                            <img src="{% static 'images/fara.jpg' %}" class="d-block w-100" alt="..." width="400" height="300">
+                        </div>
+                        <div class="carousel-item">
+                            <div class="food_name">
+                                Tilgur <br> The roasted sesame seeds are mixed with the dark jaggery and peanuts.
+                            </div>
+                            <img src="{% static 'images/tilgur.jpg' %}" class="d-block w-100" alt="..." width="400" height="300">
+                        </div>
+
+                    </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+                </div>
+                </div>
+            </div>
+</div>
+</header>
+{% endblock %}

@@ -1,0 +1,40 @@
+
+{% extends 'starter_css.html' %}
+{% load static %}
+
+{% block menu %}
+    <header>
+        {% include 'navbar.html' %}
+        <section class="new_user_content" style="height: 290px;width: 530px;margin-left: 500px;filter: drop-shadow(2px 2px 2px aquamarine); padding-left: 60px;">
+            <h3 style="padding-top: 13px;">Validate OTP </h3>
+
+            {% if msg %}
+                <h5 style="text-align: center;color: red"> {{ msg }}</h5>
+            {% endif %}
+
+            <form action="{% url 'validate_otp' %}" method="post">
+                {% csrf_token %}
+            <table align="center" border="0" width="400" style="height: 220px;">
+
+                <tr>
+                    <th>
+                        <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1"> OTP </span>
+                        </div>
+                        <input type="text" name="t1" class="form-control" placeholder="Enter OTP" aria-label="Username" aria-describedby="basic-addon1" required>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <button id="b1" type="submit" class="btn btn-outline-success">Continue</button>
+                    </th>
+                </tr>
+            </table>
+            </form>
+
+        </section>
+</header>
+
+{% endblock %}

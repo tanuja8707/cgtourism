@@ -1,0 +1,19 @@
+{% extends 'starter_css.html' %}
+{% block menu %}
+<header>
+        {% include 'navbar.html' %}
+        <main style="display: flex;">
+            <section>
+                <h3>Welcome To Chhattisgarh</h3>
+                <h1>Do Come and Visit <span class="change_content"> </span></h1>
+                <p>"Chhattisgarh Once is Not Enough"</p>
+                <a href="{% url 'user_login' %}" class="btnone" style="text-decoration: none"><i class="fa fa-sign-in" style="margin-right: 8px"></i>Login</a>
+                <a href="{% url 'new_user' %}" class="btntwo" style="text-decoration: none"><i class="fa fa-user-plus" style="margin-right: 8px"></i>SignUp Here</a>
+            </section>
+        </main>
+        {% include 'extra_content.html' %}
+
+
+
+</header>
+{% endblock %}

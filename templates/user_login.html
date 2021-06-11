@@ -1,0 +1,109 @@
+{% extends 'starter_css.html' %}
+{% load static %}
+
+{% block menu %}
+<header>
+        {% include 'navbar.html' %}
+        <section>
+            <form action="{% url 'validate_user' %}" method="post">
+                {% csrf_token %}
+            <table class="login_table" align="center" border="0" width="400">
+                <tr>
+                    <th class="login_title" colspan="2">
+                        Login
+                    </th>
+                </tr>
+                <tr>
+                    <th colspan="2">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default"><i class="fa fa-user-circle"></i></span>
+                            </div>
+                            <input type="text" name="t1" placeholder="Username" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                        </div>
+
+                    </th>
+                </tr>
+                <tr>
+                    <th colspan="2">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default"><i class="fa fa-unlock"></i></span>
+                            </div>
+                            <input type="password" name="t2" placeholder="Password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                        </div>
+
+                    </th>
+                </tr>
+                <tr>
+                    <th colspan="2">
+                        <input type="text" name="t7" id="code" placeholder="Enter Security code shown below" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required onblur="ajaxrequest('code','http://127.0.0.1:8000/checkcode/','code1')">
+                        <div id="code1"> </div>
+                    </th>
+                </tr>
+                <tr>
+                    <th colspan="2" style="font-size: 20px; color: red">
+                    Security Code : <img src="{% static 'captcha/captcha.png' %}">
+                    <a href="">
+                    <img id="img1" src="{% static 'images/refresh.png' %}" width="25" height="25" onclick="ajaxrequest('img1','http://127.0.0.1:8000/refreshcode/','img1')"> </a>
+                    </th>
+                </tr>
+                <tr><th> </th></tr>
+                <tr>
+                    <th>
+                        <button type="submit" class="btn btn-outline-success">LOGIN</button>
+
+                    </th>
+                    <th style="color: whitesmoke; text-align: right">
+                        <a href="{% url 'forgot_pass_form' %}"> Forgot Password</a><br>
+                        <a href="{% url 'new_user' %}"> New User! Register Here!</a>
+                    </th>
+                </tr>
+                <tr>
+                    <th></th>
+                </tr>
+            </table>
+            </form>
+        </section>
+</header>
+    <script type="text/javascript">
+
+    function ajaxrequest(input_id,req_url,div_id)
+    {
+    var cn = document.getElementById(input_id).value;
+    var val = 'cname='+cn;
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = check;
+    request.open("POST",req_url,true);
+    request.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+    request.send(val)
+
+    function check()
+    {
+        if(request.readyState == 4)
+        {
+            var val = request.responseText;
+            var json_data = JSON.parse(val); //converting string(text) into json type
+            var sp = document.getElementById(div_id);
+
+            if(json_data.error != undefined)
+            {
+                sp.style.color = "red";
+                sp.innerText = json_data.error;
+                document.getElementById("b1").disabled = true;
+            }
+            else
+            {
+                //sp.style.color = "green";
+                sp.innerText = "";
+                document.getElementById("b1").disabled = false;
+            }
+        }
+    }
+}
+
+    </script>
+
+{% endblock %}
+
+

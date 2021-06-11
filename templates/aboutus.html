@@ -1,0 +1,34 @@
+{% extends 'starter_css.html' %}
+{% load static %}
+{% block menu %}
+<header style="background: linear-gradient(57deg,darkgreen,#7c7903)">
+        {% include 'navbar.html' %}
+
+    <div class="about_us">
+        <div class="heading" >
+            About Us
+        </div>
+        <div class="aboutus_content" style="display: flex">
+            <p>Recognising the importance of Tourism as an instrument for socio- economic development,
+                Chhattisgarh Tourism was established. It is responsible for infrastructural and institutional
+                development, investment in facilities & hotels, wayside amenities and above all aggressive
+                marketing & promotion for the comprehensive development.<br><br>
+                Chhattisgarh has positioned itself as the destination full of surprises with some of the amazing
+                destinations which could certainly lead to the growth of tourism in the future. It has created a niche
+                for itself on the tourist map of India.
+            </p>
+            <img src="{% static 'images/about_us.png' %}" style="padding-left: 30px; height: 400px; width: 320px">
+            <div class="contact">
+                CHHATTISGARH TOURISM <br>
+                2nd Floor, Udyog Bhavan,<br>
+                Ring Road No.1, Telibandha,<br>
+                RAIPUR 492 006 (C.G.)<br>
+                Phone: +91 771 4224600<br>
+                Fax: +91 771 4066425<br>
+                Toll Free No: 1800 102 6415
+            </div>
+        </div>
+    </div>
+</header>
+
+{% endblock %}

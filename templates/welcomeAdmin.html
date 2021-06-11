@@ -1,0 +1,28 @@
+{% extends 'starter_css.html' %}
+{% block menu %}
+    {% load static %}
+    <style>
+body{}
+</style>
+<header style="background: linear-gradient(57deg ,#050763,#000);">
+        {% include 'adminMenu.html' %}
+        <main style="display: flex;">
+            <section>
+                <h3>Welcome To Chhattisgarh Tourism Admin Panel</h3>
+                <div class="row" style="margin-top: 50px">
+                    <div class="col-6"></div>
+                    <div class="col-6">
+                        <img src="{% static 'images/BHILAI.jpg' %}" >
+                    </div>
+
+                </div>
+
+            </section>
+        </main>
+        {% include 'extra_content.html' %}
+
+
+
+</header>
+{% endblock %}
+
